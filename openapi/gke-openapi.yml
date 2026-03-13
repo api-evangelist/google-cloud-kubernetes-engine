@@ -1,0 +1,365 @@
+openapi: 3.1.0
+info:
+  title: Google Kubernetes Engine API
+  description: >-
+    Builds and manages container-based applications, powered by the open source
+    Kubernetes technology.
+  version: 1.0.0
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/kubernetes-engine
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+  - url: https://container.googleapis.com/v1
+    description: Google Kubernetes Engine API v1
+tags:
+  - name: Clusters
+    description: Manage GKE clusters
+  - name: NodePools
+    description: Manage node pools within clusters
+  - name: Operations
+    description: View long-running operations
+paths:
+  /projects/{projectId}/locations/{location}/clusters:
+    get:
+      operationId: listClusters
+      summary: List Clusters
+      description: Lists all clusters owned by a project in the specified location.
+      tags:
+        - Clusters
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  clusters:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Cluster'
+    post:
+      operationId: createCluster
+      summary: Create Cluster
+      description: Creates a cluster in the specified project and location.
+      tags:
+        - Clusters
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cluster:
+                  $ref: '#/components/schemas/Cluster'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{projectId}/locations/{location}/clusters/{clusterId}:
+    get:
+      operationId: getCluster
+      summary: Get Cluster
+      description: Gets the details of a specific cluster.
+      tags:
+        - Clusters
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: clusterId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cluster'
+    delete:
+      operationId: deleteCluster
+      summary: Delete Cluster
+      description: Deletes the cluster and all associated resources.
+      tags:
+        - Clusters
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: clusterId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{projectId}/locations/{location}/clusters/{clusterId}/nodePools:
+    get:
+      operationId: listNodePools
+      summary: List Node Pools
+      description: Lists the node pools for a cluster.
+      tags:
+        - NodePools
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: clusterId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  nodePools:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/NodePool'
+    post:
+      operationId: createNodePool
+      summary: Create Node Pool
+      description: Creates a node pool for a cluster.
+      tags:
+        - NodePools
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: clusterId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nodePool:
+                  $ref: '#/components/schemas/NodePool'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{projectId}/locations/{location}/operations:
+    get:
+      operationId: listOperations
+      summary: List Operations
+      description: Lists all operations in a project in the specified location.
+      tags:
+        - Operations
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  operations:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Operation'
+components:
+  schemas:
+    Cluster:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        initialNodeCount:
+          type: integer
+        location:
+          type: string
+        nodeConfig:
+          type: object
+          properties:
+            machineType:
+              type: string
+            diskSizeGb:
+              type: integer
+            oauthScopes:
+              type: array
+              items:
+                type: string
+            imageType:
+              type: string
+        masterAuth:
+          type: object
+          properties:
+            clusterCaCertificate:
+              type: string
+        network:
+          type: string
+        subnetwork:
+          type: string
+        clusterIpv4Cidr:
+          type: string
+        status:
+          type: string
+          enum:
+            - STATUS_UNSPECIFIED
+            - PROVISIONING
+            - RUNNING
+            - RECONCILING
+            - STOPPING
+            - ERROR
+            - DEGRADED
+        endpoint:
+          type: string
+        currentMasterVersion:
+          type: string
+        currentNodeVersion:
+          type: string
+        createTime:
+          type: string
+          format: date-time
+        selfLink:
+          type: string
+    NodePool:
+      type: object
+      properties:
+        name:
+          type: string
+        config:
+          type: object
+          properties:
+            machineType:
+              type: string
+            diskSizeGb:
+              type: integer
+            imageType:
+              type: string
+        initialNodeCount:
+          type: integer
+        autoscaling:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+            minNodeCount:
+              type: integer
+            maxNodeCount:
+              type: integer
+        status:
+          type: string
+        version:
+          type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        operationType:
+          type: string
+        status:
+          type: string
+        selfLink:
+          type: string
+        targetLink:
+          type: string
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud Platform
+security:
+  - oauth2:
+      - https://www.googleapis.com/auth/cloud-platform
