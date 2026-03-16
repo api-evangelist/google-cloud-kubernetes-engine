@@ -1,3 +1,4 @@
+aid: google-cloud-kubernetes-engine
 name: Google Cloud Kubernetes Engine
 description: >-
   Google Kubernetes Engine (GKE) provides a managed environment for deploying,
@@ -8,8 +9,9 @@ image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jp
 url: >-
   https://raw.githubusercontent.com/api-search/google-cloud-kubernetes-engine/refs/heads/main/apis.yml
 created: '2026-03-13'
-modified: '2026-03-13'
-specificationVersion: '0.18'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+type: Index
 tags:
   - Google Cloud
   - Kubernetes
@@ -33,15 +35,35 @@ apis:
       - Kubernetes
       - Containers
     properties:
+      - type: Documentation
+        url: https://cloud.google.com/kubernetes-engine/docs/reference/rest
       - type: OpenAPI
         url: openapi/gke-openapi.yml
+      - type: Authentication
+        url: https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication
+      - type: Getting Started
+        url: https://cloud.google.com/kubernetes-engine/docs/quickstart
       - type: JSONSchema
         url: json-schema/gke-cluster.json
 common:
-  - type: GettingStarted
+  - type: Portal
+    url: https://cloud.google.com/kubernetes-engine
+  - type: Getting Started
     url: https://cloud.google.com/kubernetes-engine/docs/quickstart
+  - type: Documentation
+    url: https://cloud.google.com/kubernetes-engine/docs
+  - type: Authentication
+    url: https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication
   - type: Pricing
     url: https://cloud.google.com/kubernetes-engine/pricing
+  - type: Terms of Service
+    url: https://cloud.google.com/terms
+  - type: Privacy Policy
+    url: https://policies.google.com/privacy
+  - type: Status
+    url: https://status.cloud.google.com/
+  - type: Support
+    url: https://cloud.google.com/kubernetes-engine/docs/support
   - type: JSON-LD
     url: json-ld/gke-context.jsonld
 maintainers:
