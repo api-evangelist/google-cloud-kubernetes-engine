@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Google Kubernetes Engine API
+  title: Google Cloud Kubernetes Engine Google Kubernetes Engine API
   description: >-
     Builds and manages container-based applications, powered by the open source
     Kubernetes technology.
@@ -25,7 +25,7 @@ paths:
   /projects/{projectId}/locations/{location}/clusters:
     get:
       operationId: listClusters
-      summary: List Clusters
+      summary: Google Cloud Kubernetes Engine List Clusters
       description: Lists all clusters owned by a project in the specified location.
       tags:
         - Clusters
@@ -54,7 +54,7 @@ paths:
                       $ref: '#/components/schemas/Cluster'
     post:
       operationId: createCluster
-      summary: Create Cluster
+      summary: Google Cloud Kubernetes Engine Create Cluster
       description: Creates a cluster in the specified project and location.
       tags:
         - Clusters
@@ -87,7 +87,7 @@ paths:
   /projects/{projectId}/locations/{location}/clusters/{clusterId}:
     get:
       operationId: getCluster
-      summary: Get Cluster
+      summary: Google Cloud Kubernetes Engine Get Cluster
       description: Gets the details of a specific cluster.
       tags:
         - Clusters
@@ -116,7 +116,7 @@ paths:
                 $ref: '#/components/schemas/Cluster'
     delete:
       operationId: deleteCluster
-      summary: Delete Cluster
+      summary: Google Cloud Kubernetes Engine Delete Cluster
       description: Deletes the cluster and all associated resources.
       tags:
         - Clusters
@@ -146,7 +146,7 @@ paths:
   /projects/{projectId}/locations/{location}/clusters/{clusterId}/nodePools:
     get:
       operationId: listNodePools
-      summary: List Node Pools
+      summary: Google Cloud Kubernetes Engine List Node Pools
       description: Lists the node pools for a cluster.
       tags:
         - NodePools
@@ -180,7 +180,7 @@ paths:
                       $ref: '#/components/schemas/NodePool'
     post:
       operationId: createNodePool
-      summary: Create Node Pool
+      summary: Google Cloud Kubernetes Engine Create Node Pool
       description: Creates a node pool for a cluster.
       tags:
         - NodePools
@@ -218,7 +218,7 @@ paths:
   /projects/{projectId}/locations/{location}/operations:
     get:
       operationId: listOperations
-      summary: List Operations
+      summary: Google Cloud Kubernetes Engine List Operations
       description: Lists all operations in a project in the specified location.
       tags:
         - Operations
