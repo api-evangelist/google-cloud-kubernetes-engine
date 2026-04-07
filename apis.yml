@@ -13,12 +13,12 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
+  - Compute
+  - Containers
+  - GKE
   - Google Cloud
   - Kubernetes
-  - Containers
   - Orchestration
-  - GKE
-  - Compute
 apis:
   - name: Google Kubernetes Engine API
     description: >-
@@ -30,10 +30,10 @@ apis:
     baseURL: https://container.googleapis.com
     tags:
       - Clusters
+      - Containers
+      - Kubernetes
       - Node Pools
       - Operations
-      - Kubernetes
-      - Containers
     properties:
       - type: Documentation
         url: https://cloud.google.com/kubernetes-engine/docs/reference/rest
