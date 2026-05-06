@@ -1,0 +1,454 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Kubernetes Engine Google Kubernetes Engine API
+  description: Builds and manages container-based applications, powered by the open source Kubernetes technology.
+  tags:
+  - Google
+  - Cloud
+  - Kubernetes
+  - Engine
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-cloud-kubernetes-engine
+    baseUri: https://container.googleapis.com/v1
+    description: Google Cloud Kubernetes Engine Google Kubernetes Engine API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{GOOGLE_CLOUD_KUBERNETES_ENGINE_TOKEN}}'
+    resources:
+    - name: projects-projectid-locations-location-clusters
+      path: /projects/{projectId}/locations/{location}/clusters
+      operations:
+      - name: listclusters
+        method: GET
+        description: Google Cloud Kubernetes Engine List Clusters
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcluster
+        method: POST
+        description: Google Cloud Kubernetes Engine Create Cluster
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-clusters-c
+      path: /projects/{projectId}/locations/{location}/clusters/{clusterId}
+      operations:
+      - name: getcluster
+        method: GET
+        description: Google Cloud Kubernetes Engine Get Cluster
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: clusterId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletecluster
+        method: DELETE
+        description: Google Cloud Kubernetes Engine Delete Cluster
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: clusterId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-clusters-c
+      path: /projects/{projectId}/locations/{location}/clusters/{clusterId}/nodePools
+      operations:
+      - name: listnodepools
+        method: GET
+        description: Google Cloud Kubernetes Engine List Node Pools
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: clusterId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createnodepool
+        method: POST
+        description: Google Cloud Kubernetes Engine Create Node Pool
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: clusterId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-operations
+      path: /projects/{projectId}/locations/{location}/operations
+      operations:
+      - name: listoperations
+        method: GET
+        description: Google Cloud Kubernetes Engine List Operations
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-cloud-kubernetes-engine-rest
+    description: REST adapter for Google Cloud Kubernetes Engine Google Kubernetes Engine API.
+    resources:
+    - path: /projects/{projectId}/locations/{location}/clusters
+      name: listclusters
+      operations:
+      - method: GET
+        name: listclusters
+        description: Google Cloud Kubernetes Engine List Clusters
+        call: google-cloud-kubernetes-engine.listclusters
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/clusters
+      name: createcluster
+      operations:
+      - method: POST
+        name: createcluster
+        description: Google Cloud Kubernetes Engine Create Cluster
+        call: google-cloud-kubernetes-engine.createcluster
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/clusters/{clusterId}
+      name: getcluster
+      operations:
+      - method: GET
+        name: getcluster
+        description: Google Cloud Kubernetes Engine Get Cluster
+        call: google-cloud-kubernetes-engine.getcluster
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          clusterId: rest.clusterId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/clusters/{clusterId}
+      name: deletecluster
+      operations:
+      - method: DELETE
+        name: deletecluster
+        description: Google Cloud Kubernetes Engine Delete Cluster
+        call: google-cloud-kubernetes-engine.deletecluster
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          clusterId: rest.clusterId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/clusters/{clusterId}/nodePools
+      name: listnodepools
+      operations:
+      - method: GET
+        name: listnodepools
+        description: Google Cloud Kubernetes Engine List Node Pools
+        call: google-cloud-kubernetes-engine.listnodepools
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          clusterId: rest.clusterId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/clusters/{clusterId}/nodePools
+      name: createnodepool
+      operations:
+      - method: POST
+        name: createnodepool
+        description: Google Cloud Kubernetes Engine Create Node Pool
+        call: google-cloud-kubernetes-engine.createnodepool
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          clusterId: rest.clusterId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/operations
+      name: listoperations
+      operations:
+      - method: GET
+        name: listoperations
+        description: Google Cloud Kubernetes Engine List Operations
+        call: google-cloud-kubernetes-engine.listoperations
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-cloud-kubernetes-engine-mcp
+    transport: http
+    description: MCP adapter for Google Cloud Kubernetes Engine Google Kubernetes Engine API for AI agent use.
+    tools:
+    - name: listclusters
+      description: Google Cloud Kubernetes Engine List Clusters
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-kubernetes-engine.listclusters
+      with:
+        projectId: tools.projectId
+        location: tools.location
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcluster
+      description: Google Cloud Kubernetes Engine Create Cluster
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-kubernetes-engine.createcluster
+      with:
+        projectId: tools.projectId
+        location: tools.location
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcluster
+      description: Google Cloud Kubernetes Engine Get Cluster
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-kubernetes-engine.getcluster
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        clusterId: tools.clusterId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: clusterId
+        type: string
+        description: clusterId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletecluster
+      description: Google Cloud Kubernetes Engine Delete Cluster
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-cloud-kubernetes-engine.deletecluster
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        clusterId: tools.clusterId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: clusterId
+        type: string
+        description: clusterId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listnodepools
+      description: Google Cloud Kubernetes Engine List Node Pools
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-kubernetes-engine.listnodepools
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        clusterId: tools.clusterId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: clusterId
+        type: string
+        description: clusterId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createnodepool
+      description: Google Cloud Kubernetes Engine Create Node Pool
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-kubernetes-engine.createnodepool
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        clusterId: tools.clusterId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: clusterId
+        type: string
+        description: clusterId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listoperations
+      description: Google Cloud Kubernetes Engine List Operations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-kubernetes-engine.listoperations
+      with:
+        projectId: tools.projectId
+        location: tools.location
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_KUBERNETES_ENGINE_TOKEN: GOOGLE_CLOUD_KUBERNETES_ENGINE_TOKEN
