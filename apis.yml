@@ -41,14 +41,14 @@ apis:
         url: openapi/gke-openapi.yml
       - type: Authentication
         url: https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication
-      - type: Getting Started
+      - type: GettingStarted
         url: https://cloud.google.com/kubernetes-engine/docs/quickstart
       - type: JSONSchema
         url: json-schema/gke-cluster.json
 common:
   - type: Portal
     url: https://cloud.google.com/kubernetes-engine
-  - type: Getting Started
+  - type: GettingStarted
     url: https://cloud.google.com/kubernetes-engine/docs/quickstart
   - type: Documentation
     url: https://cloud.google.com/kubernetes-engine/docs
@@ -56,15 +56,15 @@ common:
     url: https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication
   - type: Pricing
     url: https://cloud.google.com/kubernetes-engine/pricing
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://cloud.google.com/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://policies.google.com/privacy
-  - type: Status
+  - type: StatusPage
     url: https://status.cloud.google.com/
   - type: Support
     url: https://cloud.google.com/kubernetes-engine/docs/support
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/gke-context.jsonld
   - type: Integrations
     url: https://cloud.google.com/marketplace
