@@ -1,0 +1,87 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Kubernetes Engine Google Kubernetes Engine API — Operations
+  description: 'Google Cloud Kubernetes Engine Google Kubernetes Engine API — Operations. 1 operations. Lead operation: Google
+    Cloud Kubernetes Engine List Operations. Self-contained Naftiko capability covering one Google Cloud Kubernetes Engine
+    business surface.'
+  tags:
+  - Google Cloud Kubernetes Engine
+  - Operations
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_KUBERNETES_ENGINE_API_KEY: GOOGLE_CLOUD_KUBERNETES_ENGINE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: gke-operations
+    baseUri: https://container.googleapis.com/v1
+    description: Google Cloud Kubernetes Engine Google Kubernetes Engine API — Operations business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: projects-projectId-locations-location-operations
+      path: /projects/{projectId}/locations/{location}/operations
+      operations:
+      - name: listoperations
+        method: GET
+        description: Google Cloud Kubernetes Engine List Operations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_KUBERNETES_ENGINE_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: gke-operations-rest
+    port: 8080
+    description: REST adapter for Google Cloud Kubernetes Engine Google Kubernetes Engine API — Operations. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/projects/{projectid}/locations/{location}/operations
+      name: projects-projectid-locations-location-operations
+      description: REST surface for projects-projectId-locations-location-operations.
+      operations:
+      - method: GET
+        name: listoperations
+        description: Google Cloud Kubernetes Engine List Operations
+        call: gke-operations.listoperations
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: gke-operations-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Kubernetes Engine Google Kubernetes Engine API — Operations. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: google-cloud-kubernetes-engine-list
+      description: Google Cloud Kubernetes Engine List Operations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: gke-operations.listoperations
+      with:
+        projectId: tools.projectId
+        location: tools.location
+      outputParameters:
+      - type: object
+        mapping: $.
