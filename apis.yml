@@ -43,6 +43,8 @@ apis:
       - type: JSONSchema
         url: json-schema/gke-cluster.json
 common:
+  - type: OAuthScopes
+    url: scopes/google-cloud-kubernetes-engine-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/GoogleCloudPlatform
   - type: Portal
