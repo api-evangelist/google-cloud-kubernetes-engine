@@ -43,6 +43,12 @@ apis:
       - type: JSONSchema
         url: json-schema/gke-cluster.json
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-kubernetes-engine-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-kubernetes-engine-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-kubernetes-engine-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-kubernetes-engine-scopes.yml
   - type: GitHubOrganization
