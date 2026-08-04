@@ -1,0 +1,561 @@
+{
+  "info": {
+    "_postman_id": "c87dd957-9dbf-4191-9386-7637f74a6adc",
+    "name": "Google Cloud Kubernetes Engine Google Kubernetes Engine Clusters API",
+    "description": "Builds and manages container-based applications, powered by the open source Kubernetes technology.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:47:52.000Z",
+    "updatedAt": "2026-07-28T01:47:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c87dd957-9dbf-4191-9386-7637f74a6adc"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "clusters",
+                      "item": [
+                        {
+                          "name": "{clusterId}",
+                          "item": [
+                            {
+                              "name": "Google Cloud Kubernetes Engine Get Cluster",
+                              "id": "8c020475-d53c-437c-a06e-d882742a165d",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/clusters/:clusterId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "clusters",
+                                    ":clusterId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "b9c909b5-80ff-4670-8693-a981fa9446f3",
+                                      "key": "projectId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "1ee06ee7-fb1c-48e9-bed9-3a9a3073b27e",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "7c12bf4e-2ae5-4348-9bbe-783fe362feb5",
+                                      "key": "clusterId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Gets the details of a specific cluster."
+                              },
+                              "response": [
+                                {
+                                  "id": "17fcb99a-3066-4839-b096-84723260fb54",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/clusters/:clusterId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "clusters",
+                                        ":clusterId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "projectId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "clusterId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"initialNodeCount\": \"<integer>\",\n  \"location\": \"<string>\",\n  \"nodeConfig\": {\n    \"machineType\": \"<string>\",\n    \"diskSizeGb\": \"<integer>\",\n    \"oauthScopes\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"imageType\": \"<string>\"\n  },\n  \"masterAuth\": {\n    \"clusterCaCertificate\": \"<string>\"\n  },\n  \"network\": \"<string>\",\n  \"subnetwork\": \"<string>\",\n  \"clusterIpv4Cidr\": \"<string>\",\n  \"status\": \"RUNNING\",\n  \"endpoint\": \"<string>\",\n  \"currentMasterVersion\": \"<string>\",\n  \"currentNodeVersion\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"selfLink\": \"<string>\"\n}",
+                                  "createdAt": "2026-07-28T01:47:52.000Z",
+                                  "updatedAt": "2026-07-28T01:47:52.000Z",
+                                  "uid": "35240-17fcb99a-3066-4839-b096-84723260fb54"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:47:52.000Z",
+                              "updatedAt": "2026-07-28T01:47:52.000Z",
+                              "uid": "35240-8c020475-d53c-437c-a06e-d882742a165d"
+                            },
+                            {
+                              "name": "Google Cloud Kubernetes Engine Delete Cluster",
+                              "id": "6a158148-5f51-4706-a52b-5d72796468a3",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/clusters/:clusterId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "clusters",
+                                    ":clusterId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "fc554a5a-018d-4a6f-aa1f-95b0aa2189da",
+                                      "key": "projectId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "b30d78b5-7f50-4c71-823c-537bf32151a6",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "b0acf76a-b137-428f-9b11-98607d4f5c5f",
+                                      "key": "clusterId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Deletes the cluster and all associated resources."
+                              },
+                              "response": [
+                                {
+                                  "id": "278f9e55-e0bc-408a-a87b-81eb15616f68",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/clusters/:clusterId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "clusters",
+                                        ":clusterId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "projectId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "clusterId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"operationType\": \"<string>\",\n  \"status\": \"<string>\",\n  \"selfLink\": \"<string>\",\n  \"targetLink\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"endTime\": \"<dateTime>\"\n}",
+                                  "createdAt": "2026-07-28T01:47:52.000Z",
+                                  "updatedAt": "2026-07-28T01:47:52.000Z",
+                                  "uid": "35240-278f9e55-e0bc-408a-a87b-81eb15616f68"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:47:52.000Z",
+                              "updatedAt": "2026-07-28T01:47:52.000Z",
+                              "uid": "35240-6a158148-5f51-4706-a52b-5d72796468a3"
+                            }
+                          ],
+                          "id": "c8626cfd-ebaf-4158-9504-90cf5c3738ed",
+                          "createdAt": "2026-07-28T01:47:52.000Z",
+                          "updatedAt": "2026-07-28T01:47:52.000Z",
+                          "uid": "35240-c8626cfd-ebaf-4158-9504-90cf5c3738ed"
+                        },
+                        {
+                          "name": "Google Cloud Kubernetes Engine List Clusters",
+                          "id": "8c6bad91-b5da-4415-a0cb-226e8b3db7d2",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/clusters",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "clusters"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "74a71a9b-e499-4f22-bc3c-33ce7fccef77",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "d1f91ebd-7e47-4e68-be9b-3f526752e88b",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Lists all clusters owned by a project in the specified location."
+                          },
+                          "response": [
+                            {
+                              "id": "d28250a1-c54d-4a10-85f5-bf7fbe333c08",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/clusters",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "clusters"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"clusters\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"initialNodeCount\": \"<integer>\",\n      \"location\": \"<string>\",\n      \"nodeConfig\": {\n        \"machineType\": \"<string>\",\n        \"diskSizeGb\": \"<integer>\",\n        \"oauthScopes\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"imageType\": \"<string>\"\n      },\n      \"masterAuth\": {\n        \"clusterCaCertificate\": \"<string>\"\n      },\n      \"network\": \"<string>\",\n      \"subnetwork\": \"<string>\",\n      \"clusterIpv4Cidr\": \"<string>\",\n      \"status\": \"STOPPING\",\n      \"endpoint\": \"<string>\",\n      \"currentMasterVersion\": \"<string>\",\n      \"currentNodeVersion\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"selfLink\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"initialNodeCount\": \"<integer>\",\n      \"location\": \"<string>\",\n      \"nodeConfig\": {\n        \"machineType\": \"<string>\",\n        \"diskSizeGb\": \"<integer>\",\n        \"oauthScopes\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"imageType\": \"<string>\"\n      },\n      \"masterAuth\": {\n        \"clusterCaCertificate\": \"<string>\"\n      },\n      \"network\": \"<string>\",\n      \"subnetwork\": \"<string>\",\n      \"clusterIpv4Cidr\": \"<string>\",\n      \"status\": \"RECONCILING\",\n      \"endpoint\": \"<string>\",\n      \"currentMasterVersion\": \"<string>\",\n      \"currentNodeVersion\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"selfLink\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:47:52.000Z",
+                              "updatedAt": "2026-07-28T01:47:52.000Z",
+                              "uid": "35240-d28250a1-c54d-4a10-85f5-bf7fbe333c08"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:47:52.000Z",
+                          "updatedAt": "2026-07-28T01:47:52.000Z",
+                          "uid": "35240-8c6bad91-b5da-4415-a0cb-226e8b3db7d2"
+                        },
+                        {
+                          "name": "Google Cloud Kubernetes Engine Create Cluster",
+                          "id": "b1797fd1-6384-4ff5-a30d-a9b3c5a1721b",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"cluster\": {\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"initialNodeCount\": \"<integer>\",\n    \"location\": \"<string>\",\n    \"nodeConfig\": {\n      \"machineType\": \"<string>\",\n      \"diskSizeGb\": \"<integer>\",\n      \"oauthScopes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"imageType\": \"<string>\"\n    },\n    \"masterAuth\": {\n      \"clusterCaCertificate\": \"<string>\"\n    },\n    \"network\": \"<string>\",\n    \"subnetwork\": \"<string>\",\n    \"clusterIpv4Cidr\": \"<string>\",\n    \"status\": \"RECONCILING\",\n    \"endpoint\": \"<string>\",\n    \"currentMasterVersion\": \"<string>\",\n    \"currentNodeVersion\": \"<string>\",\n    \"createTime\": \"<dateTime>\",\n    \"selfLink\": \"<string>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/clusters",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "clusters"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "d75e2f6e-ffee-4007-af99-6830062baa32",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "4f5e22a7-4027-4b39-b77d-d2c6da03ca30",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Creates a cluster in the specified project and location."
+                          },
+                          "response": [
+                            {
+                              "id": "c1f2ecf5-a32f-466f-83b1-434c30332961",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"cluster\": {\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"initialNodeCount\": \"<integer>\",\n    \"location\": \"<string>\",\n    \"nodeConfig\": {\n      \"machineType\": \"<string>\",\n      \"diskSizeGb\": \"<integer>\",\n      \"oauthScopes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"imageType\": \"<string>\"\n    },\n    \"masterAuth\": {\n      \"clusterCaCertificate\": \"<string>\"\n    },\n    \"network\": \"<string>\",\n    \"subnetwork\": \"<string>\",\n    \"clusterIpv4Cidr\": \"<string>\",\n    \"status\": \"RECONCILING\",\n    \"endpoint\": \"<string>\",\n    \"currentMasterVersion\": \"<string>\",\n    \"currentNodeVersion\": \"<string>\",\n    \"createTime\": \"<dateTime>\",\n    \"selfLink\": \"<string>\"\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/clusters",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "clusters"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"operationType\": \"<string>\",\n  \"status\": \"<string>\",\n  \"selfLink\": \"<string>\",\n  \"targetLink\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"endTime\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T01:47:52.000Z",
+                              "updatedAt": "2026-07-28T01:47:52.000Z",
+                              "uid": "35240-c1f2ecf5-a32f-466f-83b1-434c30332961"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:47:52.000Z",
+                          "updatedAt": "2026-07-28T01:47:52.000Z",
+                          "uid": "35240-b1797fd1-6384-4ff5-a30d-a9b3c5a1721b"
+                        }
+                      ],
+                      "id": "2eb2c8b2-24f8-413b-89d2-086505e55bdc",
+                      "createdAt": "2026-07-28T01:47:52.000Z",
+                      "updatedAt": "2026-07-28T01:47:52.000Z",
+                      "uid": "35240-2eb2c8b2-24f8-413b-89d2-086505e55bdc"
+                    }
+                  ],
+                  "id": "9611ca32-e102-4411-9090-fbecadc23518",
+                  "createdAt": "2026-07-28T01:47:52.000Z",
+                  "updatedAt": "2026-07-28T01:47:52.000Z",
+                  "uid": "35240-9611ca32-e102-4411-9090-fbecadc23518"
+                }
+              ],
+              "id": "40279483-0858-4b7f-8e22-fa503c60322b",
+              "createdAt": "2026-07-28T01:47:52.000Z",
+              "updatedAt": "2026-07-28T01:47:52.000Z",
+              "uid": "35240-40279483-0858-4b7f-8e22-fa503c60322b"
+            }
+          ],
+          "id": "47a7323d-b6f2-4a6c-bed5-e34fe0d2068a",
+          "createdAt": "2026-07-28T01:47:52.000Z",
+          "updatedAt": "2026-07-28T01:47:52.000Z",
+          "uid": "35240-47a7323d-b6f2-4a6c-bed5-e34fe0d2068a"
+        }
+      ],
+      "id": "f7678a07-a2ed-424b-85f5-ee02889934d8",
+      "createdAt": "2026-07-28T01:47:52.000Z",
+      "updatedAt": "2026-07-28T01:47:52.000Z",
+      "uid": "35240-f7678a07-a2ed-424b-85f5-ee02889934d8"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://container.googleapis.com/v1"
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "info": {
+    "_postman_id": "db26814c-07b5-486c-9b50-830c863fd4f5",
+    "name": "Google Cloud Kubernetes Engine Google Kubernetes Engine Clusters Operations API",
+    "description": "Builds and manages container-based applications, powered by the open source Kubernetes technology.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:47:58.000Z",
+    "updatedAt": "2026-07-28T01:47:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-db26814c-07b5-486c-9b50-830c863fd4f5"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "operations",
+                      "item": [
+                        {
+                          "name": "Google Cloud Kubernetes Engine List Operations",
+                          "id": "f54a49bd-8477-496f-8ed2-7dd22492684f",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/operations",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "operations"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "692d3ba3-7da3-4cad-8816-44898a97a937",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "3e8ee304-b359-455b-985d-4cb0514cf7e4",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Lists all operations in a project in the specified location."
+                          },
+                          "response": [
+                            {
+                              "id": "f8a37350-1dfc-4480-b6bc-919889102126",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/operations",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "operations"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"operations\": [\n    {\n      \"name\": \"<string>\",\n      \"operationType\": \"<string>\",\n      \"status\": \"<string>\",\n      \"selfLink\": \"<string>\",\n      \"targetLink\": \"<string>\",\n      \"startTime\": \"<dateTime>\",\n      \"endTime\": \"<dateTime>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"operationType\": \"<string>\",\n      \"status\": \"<string>\",\n      \"selfLink\": \"<string>\",\n      \"targetLink\": \"<string>\",\n      \"startTime\": \"<dateTime>\",\n      \"endTime\": \"<dateTime>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:47:58.000Z",
+                              "updatedAt": "2026-07-28T01:47:58.000Z",
+                              "uid": "35240-f8a37350-1dfc-4480-b6bc-919889102126"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:47:58.000Z",
+                          "updatedAt": "2026-07-28T01:47:58.000Z",
+                          "uid": "35240-f54a49bd-8477-496f-8ed2-7dd22492684f"
+                        }
+                      ],
+                      "id": "d91a3402-2321-4d14-919b-abd4c2f686c5",
+                      "createdAt": "2026-07-28T01:47:58.000Z",
+                      "updatedAt": "2026-07-28T01:47:58.000Z",
+                      "uid": "35240-d91a3402-2321-4d14-919b-abd4c2f686c5"
+                    }
+                  ],
+                  "id": "71e56589-cd5a-40be-a541-703a16b4cd39",
+                  "createdAt": "2026-07-28T01:47:58.000Z",
+                  "updatedAt": "2026-07-28T01:47:58.000Z",
+                  "uid": "35240-71e56589-cd5a-40be-a541-703a16b4cd39"
+                }
+              ],
+              "id": "8a180d39-34f8-4935-a28a-799bef7d97b6",
+              "createdAt": "2026-07-28T01:47:58.000Z",
+              "updatedAt": "2026-07-28T01:47:58.000Z",
+              "uid": "35240-8a180d39-34f8-4935-a28a-799bef7d97b6"
+            }
+          ],
+          "id": "4dbe6fc8-221f-4918-8e34-a4b16ffa626f",
+          "createdAt": "2026-07-28T01:47:58.000Z",
+          "updatedAt": "2026-07-28T01:47:58.000Z",
+          "uid": "35240-4dbe6fc8-221f-4918-8e34-a4b16ffa626f"
+        }
+      ],
+      "id": "858cae33-5d6b-4713-9b9f-1bcf81a02a5c",
+      "createdAt": "2026-07-28T01:47:58.000Z",
+      "updatedAt": "2026-07-28T01:47:58.000Z",
+      "uid": "35240-858cae33-5d6b-4713-9b9f-1bcf81a02a5c"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://container.googleapis.com/v1"
+    }
+  ]
+}
