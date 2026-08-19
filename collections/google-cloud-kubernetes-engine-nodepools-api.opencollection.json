@@ -1,0 +1,90 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Kubernetes Engine Google Kubernetes Engine Clusters NodePools API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NodePools",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Kubernetes Engine List Node Pools",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://container.googleapis.com/v1/projects/:projectId/locations/:location/clusters/:clusterId/nodePools",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "clusterId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists the node pools for a cluster."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Kubernetes Engine Create Node Pool",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://container.googleapis.com/v1/projects/:projectId/locations/:location/clusters/:clusterId/nodePools",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "clusterId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a node pool for a cluster."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

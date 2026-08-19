@@ -1,0 +1,136 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Kubernetes Engine Google Kubernetes Engine Clusters API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Clusters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Kubernetes Engine List Clusters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://container.googleapis.com/v1/projects/:projectId/locations/:location/clusters",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists all clusters owned by a project in the specified location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Kubernetes Engine Create Cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://container.googleapis.com/v1/projects/:projectId/locations/:location/clusters",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a cluster in the specified project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Kubernetes Engine Get Cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://container.googleapis.com/v1/projects/:projectId/locations/:location/clusters/:clusterId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "clusterId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets the details of a specific cluster."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Kubernetes Engine Delete Cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://container.googleapis.com/v1/projects/:projectId/locations/:location/clusters/:clusterId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "clusterId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes the cluster and all associated resources."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,169 @@
+{
+  "item": [
+    {
+      "id": "ead297bf-9f94-41f6-bd7c-318071b1c33c",
+      "name": "Operations",
+      "description": {
+        "content": "View long-running operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "68b2aad4-7436-4a23-8677-763de2c8da19",
+          "name": "Google Cloud Kubernetes Engine List Operations",
+          "request": {
+            "name": "Google Cloud Kubernetes Engine List Operations",
+            "description": {
+              "content": "Lists all operations in a project in the specified location.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "operations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d2d8816a-9676-4e36-8cf9-877d64cfac37",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "operations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"operations\": [\n    {\n      \"name\": \"string\",\n      \"operationType\": \"string\",\n      \"status\": \"string\",\n      \"selfLink\": \"string\",\n      \"targetLink\": \"string\",\n      \"startTime\": \"1961-06-09T07:28:10.168Z\",\n      \"endTime\": \"1949-02-16T10:35:40.241Z\"\n    },\n    {\n      \"name\": \"string\",\n      \"operationType\": \"string\",\n      \"status\": \"string\",\n      \"selfLink\": \"string\",\n      \"targetLink\": \"string\",\n      \"startTime\": \"2016-02-05T04:41:09.530Z\",\n      \"endTime\": \"2009-01-03T05:42:11.865Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://container.googleapis.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "696a79de-fc96-412e-b795-081ff40d5f50",
+    "name": "Google Cloud Kubernetes Engine Google Kubernetes Engine Clusters Operations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Builds and manages container-based applications, powered by the open source Kubernetes technology.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}

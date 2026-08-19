@@ -1,0 +1,342 @@
+{
+  "item": [
+    {
+      "id": "b2a54a6a-eede-4a3d-818b-35a5553af62a",
+      "name": "NodePools",
+      "description": {
+        "content": "Manage node pools within clusters",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "022f9a61-3527-4089-8cc0-bb0fc0e40769",
+          "name": "Google Cloud Kubernetes Engine List Node Pools",
+          "request": {
+            "name": "Google Cloud Kubernetes Engine List Node Pools",
+            "description": {
+              "content": "Lists the node pools for a cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "clusters",
+                ":clusterId",
+                "nodePools"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4bb11d40-f602-4f00-82e4-07eb4b0ca4d1",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "clusters",
+                    ":clusterId",
+                    "nodePools"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"nodePools\": [\n    {\n      \"name\": \"string\",\n      \"config\": {\n        \"machineType\": \"string\",\n        \"diskSizeGb\": 9611,\n        \"imageType\": \"string\"\n      },\n      \"initialNodeCount\": 2011,\n      \"autoscaling\": {\n        \"enabled\": true,\n        \"minNodeCount\": 4881,\n        \"maxNodeCount\": 1927\n      },\n      \"status\": \"string\",\n      \"version\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"config\": {\n        \"machineType\": \"string\",\n        \"diskSizeGb\": 5043,\n        \"imageType\": \"string\"\n      },\n      \"initialNodeCount\": 5829,\n      \"autoscaling\": {\n        \"enabled\": false,\n        \"minNodeCount\": 9025,\n        \"maxNodeCount\": 5897\n      },\n      \"status\": \"string\",\n      \"version\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6955a64f-17b4-4b43-b3e4-a1139b0cd3cf",
+          "name": "Google Cloud Kubernetes Engine Create Node Pool",
+          "request": {
+            "name": "Google Cloud Kubernetes Engine Create Node Pool",
+            "description": {
+              "content": "Creates a node pool for a cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "clusters",
+                ":clusterId",
+                "nodePools"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nodePool\": {\n    \"name\": \"<string>\",\n    \"config\": {\n      \"machineType\": \"<string>\",\n      \"diskSizeGb\": \"<integer>\",\n      \"imageType\": \"<string>\"\n    },\n    \"initialNodeCount\": \"<integer>\",\n    \"autoscaling\": {\n      \"enabled\": \"<boolean>\",\n      \"minNodeCount\": \"<integer>\",\n      \"maxNodeCount\": \"<integer>\"\n    },\n    \"status\": \"<string>\",\n    \"version\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7f38559c-0e77-4b32-a99d-651a388ab73c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "clusters",
+                    ":clusterId",
+                    "nodePools"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nodePool\": {\n    \"name\": \"string\",\n    \"config\": {\n      \"machineType\": \"string\",\n      \"diskSizeGb\": 6840,\n      \"imageType\": \"string\"\n    },\n    \"initialNodeCount\": 7507,\n    \"autoscaling\": {\n      \"enabled\": true,\n      \"minNodeCount\": 8841,\n      \"maxNodeCount\": 136\n    },\n    \"status\": \"string\",\n    \"version\": \"string\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"operationType\": \"string\",\n  \"status\": \"string\",\n  \"selfLink\": \"string\",\n  \"targetLink\": \"string\",\n  \"startTime\": \"1963-02-05T06:43:12.178Z\",\n  \"endTime\": \"1961-12-27T02:02:49.232Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://container.googleapis.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "32f8b071-538f-4464-963b-1379b960f0e9",
+    "name": "Google Cloud Kubernetes Engine Google Kubernetes Engine Clusters NodePools API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Builds and manages container-based applications, powered by the open source Kubernetes technology.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}

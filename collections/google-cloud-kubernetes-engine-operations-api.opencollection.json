@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Kubernetes Engine Google Kubernetes Engine Clusters Operations API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Operations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Kubernetes Engine List Operations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://container.googleapis.com/v1/projects/:projectId/locations/:location/operations",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists all operations in a project in the specified location."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
