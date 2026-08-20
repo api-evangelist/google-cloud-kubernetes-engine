@@ -37,6 +37,8 @@ apis:
   humanURL: https://cloud.google.com/kubernetes-engine/docs/reference/rest
   baseURL: https://container.googleapis.com
   tags:
+  - Cluster
+  tags_raw:
   - Clusters
   properties:
   - type: OpenAPI
@@ -55,6 +57,8 @@ apis:
   humanURL: https://cloud.google.com/kubernetes-engine/docs/reference/rest
   baseURL: https://container.googleapis.com
   tags:
+  - Node Pools
+  tags_raw:
   - NodePools
   properties:
   - type: OpenAPI
@@ -72,7 +76,8 @@ apis:
   description: View long-running operations
   humanURL: https://cloud.google.com/kubernetes-engine/docs/reference/rest
   baseURL: https://container.googleapis.com
-  tags:
+  tags: []
+  tags_raw:
   - Operations
   properties:
   - type: OpenAPI
