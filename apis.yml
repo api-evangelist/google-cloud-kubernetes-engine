@@ -4,6 +4,18 @@ description: >-
   Google Kubernetes Engine (GKE) provides a managed environment for deploying, managing, and scaling containerized
   applications using Google infrastructure. GKE runs on Kubernetes, providing automated cluster management,
   auto-scaling, auto-repair, and integrated logging and monitoring for container workloads.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
