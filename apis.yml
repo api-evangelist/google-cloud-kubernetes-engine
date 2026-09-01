@@ -69,7 +69,7 @@ apis:
   humanURL: https://cloud.google.com/kubernetes-engine/docs/reference/rest
   baseURL: https://container.googleapis.com
   tags:
-  - NodePools
+  - Node Pools
   tags_raw:
   - NodePools
   properties:
