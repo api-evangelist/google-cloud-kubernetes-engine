@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Google Cloud Kubernetes Engine Google Kubernetes Engine Clusters API
   description: Builds and manages container-based applications, powered by the open source Kubernetes technology.
@@ -142,6 +142,25 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        operationType:
+          type: string
+        status:
+          type: string
+        selfLink:
+          type: string
+        targetLink:
+          type: string
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
     Cluster:
       type: object
       properties:
@@ -198,25 +217,6 @@ components:
           format: date-time
         selfLink:
           type: string
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        operationType:
-          type: string
-        status:
-          type: string
-        selfLink:
-          type: string
-        targetLink:
-          type: string
-        startTime:
-          type: string
-          format: date-time
-        endTime:
-          type: string
-          format: date-time
   securitySchemes:
     oauth2:
       type: oauth2
